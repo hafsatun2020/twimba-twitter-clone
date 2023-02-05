@@ -7,7 +7,7 @@ const signUpBox = document.getElementById('sign-up')
 const cancelbtn = document.getElementById('cancel-btn')
 const signBtn = document.getElementById('sign-up-btn')
 const form = document.getElementById('sign-up-form')
-
+const body = document.querySelector('body')
 const user = {
     handle:`@Scrimba`
 
@@ -21,6 +21,7 @@ if (tweetsFromLS) {
  setTimeout(function(){
     signUpBox.style.display = 'block'
     cancelbtn.disabled = true
+    body.style.overflow = 'hidden'
 
  }, 3000)
 
@@ -30,6 +31,7 @@ if (tweetsFromLS) {
     console.log(name)
     document.getElementById('form').innerHTML =`<p id="message">Thank you for Signing Up <span> ${name}!</span></p>`
     cancelbtn.disabled = false
+    
 
 
     document.addEventListener('click', function(e){
@@ -57,6 +59,7 @@ if (tweetsFromLS) {
 
 cancelbtn.addEventListener('click', function(){
     signUpBox.style.display = 'none'
+    body.style.overflow = 'auto'
 })
 
 
