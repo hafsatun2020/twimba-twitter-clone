@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- netlify:(https://profound-cascaron-85cdb2.netlify.app)
 
 ## My process
  follow along Scrimba course 2x speed then, watch in slower speed, then redo the whole project from scratch(only Js not CSS and HTML)
