@@ -20,7 +20,7 @@ if (tweetsFromLS) {
 
  setTimeout(function(){
     signUpBox.style.display = 'block'
-    cancelbtn.disabled = false
+    cancelbtn.disabled = true
 
  }, 3000)
 
