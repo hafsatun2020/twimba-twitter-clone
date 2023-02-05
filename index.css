@@ -1,0 +1,393 @@
+*, *::after, *::before {
+   
+    box-sizing: border-box;
+}
+
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    
+    
+}
+
+
+body {
+    display: inline;
+    
+}
+
+
+/* typography and icons */
+
+h1{
+    color: #0F8CDF;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+i{
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.fa-solid{
+    color: #999;
+}
+
+.fa-house, .fa-hashtag, .fa-bell, .fa-envelope, .fa-user {
+    color: black;
+    margin: 5px;
+}
+
+.liked{
+    color: red;
+}
+
+.retweeted {
+  color: limegreen;
+}
+
+/* layout */
+
+main {
+    width: 100vw;
+    margin: 0 auto;
+    padding: 0%;
+    display: flex;
+    flex-direction: row;
+
+    
+}
+#nav-1 {
+    display: block;
+}
+
+
+section {
+    border: 1px solid #E1E8ED; 
+   margin: 0 auto;
+}
+
+#center {
+    width: 50vw;
+    padding: 30px;
+    margin: 0px 10px;
+}
+#left-side, #right-side {
+    width: 20vw;
+}
+
+#left-side {
+    border: none;
+}
+
+#right-side {
+    border: none;
+}
+
+header{
+    padding-bottom: 25px;
+   
+    margin: 0 auto;
+}
+
+
+
+.tweet-input-area {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* textareas + btn */
+
+textarea{
+    border: none;
+    resize: none;
+    padding: 10px;
+    margin: 0 0 20px 0;
+    height: 60px;
+    width: 100%;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+button{
+    background-color: #1DA1F2;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    
+}
+
+/* tweet */
+
+.tweet{
+    border-top: 1px solid lightgray;
+    padding: 20px;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.tweet-inner{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.tweet-details{
+    display: flex;
+    font-size: 13px;
+    justify-content: space-between;
+    width: 160px;
+}
+
+.tweet-detail{
+    display: flex;
+    gap: 4px;
+}
+
+.tweet-reply{
+    border-top: 1px solid lightgray;
+    padding: 20px 0 0 0px;
+    margin: 10px 0 10px 40px;
+    width: 80%;
+}
+
+.handle{
+    font-size: 12px;
+    font-weight: 500;
+    color: #555;
+    margin-top: 0;
+}
+
+.tweet-text{
+    width: 207px;
+    font-size: 14px;
+    line-height: 20px;
+}
+#tweet-btn {
+    width: 100%; 
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 19px;
+    font-weight: 600;
+}
+
+/* images */
+
+.profile-pic{
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    width: 48px;
+}
+
+/* utility */
+.hidden{
+    display: none;
+}
+
+a {
+   color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    color: black;
+    margin-top: 0;
+    
+}
+
+li {
+    padding: 5px;
+    margin: 5px;
+    text-align: left;
+}
+
+
+.fa-brands {
+   padding: 20px;
+   padding-top: 10px;
+    color: #0F8CDF;
+    font-size: 20px;
+    border-radius:100% ;
+}
+
+#search {
+    border: 1px solid gray;
+    width: 100%;
+    border-radius: 10px;
+    padding: 3px;
+margin-top: 3px;
+color: #999;
+}
+
+
+
+#trends {
+    background-color: #F5F8FA;
+    width: 100%;
+    padding-top: 0;
+    padding: 10px;
+   margin: 10px 0px;
+   border-radius: 10px;
+}
+
+h3 {
+    
+    padding-top: 0;
+    margin-top: 0%;
+    font-size: 0.9rem;
+}
+
+#trending {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.6rem;
+}
+#sign-up {
+    display: none;
+    position: fixed;
+    top : 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 300px;
+    max-height: 200px;
+    padding: 10px;
+    background: white;
+    z-index: 20;
+    border: #1DA1F2 2px solid;
+}
+
+#sign-up-form{
+    margin: 20px;
+}
+
+
+#sign-up-btn, #login-btn {
+   
+    width: 30%; 
+    font-size: 13px;
+    padding: 5px;
+    font-weight: 600;
+    margin-top: 5px;
+    margin: px auto;
+}
+
+#cancel-btn {
+  
+    margin-left: 93%;
+    border: none;
+    display: block;
+    
+}
+
+#fullname, #email, #password {
+    border: 1px solid gray;
+    width: 100%;
+    border-radius: 10px;
+    padding: 3px;
+margin-top: 3px;
+color: #999;
+
+}
+
+
+#left-side a :hover {
+    background-color: #F5F8FA;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#trending > a:hover {
+    background-color: #E1E8ED;
+    width: 100%;
+    border-radius: 10px;
+    padding: 4px;
+}
+#trending > p, h4 {
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width:601px){
+    #nav-2{
+        display: none;
+    }
+}
+@media (max-width: 600px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        font: 1em sans-serif;
+        position: relative;
+        transform: none;
+        z-index: 0;
+    }
+
+    .fa-brands {
+        display: none;
+       
+    }
+    #center{
+        width: 80%;
+        margin: 10px auto;
+        padding: 0%;
+        z-index: 1;
+    }
+    
+    #left-side {
+        position: fixed;
+        background-color: white;
+        bottom: 10;
+        left: 0;
+        right: 0;
+        top: 90%;
+        width: 100%;
+        height: 10vh;
+        z-index: 10;
+        text-align: center;
+       
+        font-size: 2.5rem;
+    }
+
+    #left-side a {
+        color: black;
+        padding: 5px;
+        text-decoration: none;
+    }
+
+    a :hover {
+        background-color: none;
+    }   
+
+    li {
+        display: inline;
+    }
+
+    #nav-1 {
+        display: none;
+    }
+
+    #right-side{
+        display: none;
+    }
+}
+
+#message span {
+    color:#0F8CDF;
+  
+    font-weight: bold;
+}
+#message {
+   text-align: center;
+}

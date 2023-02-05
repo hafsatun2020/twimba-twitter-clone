@@ -1,0 +1,117 @@
+
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta>
+	<!-- CSS -->
+	<link rel="stylesheet" href="index.css">
+	<!-- Font Awesome CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body> 
+	
+	<main>
+		
+		<section id="left-side">
+			
+				<div id="nav">
+					
+					<nav id="nav-1">
+						<i class="fa-brands fa-twitter"></i>
+						<ul>
+							<a href="#"><li><i class="fa-solid fa-house"></i>Home</li></a>
+							<a href="#"><li><i class="fa-solid fa-hashtag"></i>Explore</li></a>
+							<a href="#"><li><i class="fa-regular fa-bell"></i>Notifications</li></a>
+							<a href="#"><li><i class="fa-regular fa-envelope"></i>Messages</li></a>
+							<a href="#"><li><i class="fa-regular fa-user"></i>Profile</li></a>
+						</ul>
+					</nav>
+					<nav id="nav-2">
+						<ul>
+							<li><a href="#"><i class="fa-solid fa-house"></i></a></li>
+							<li><a href="#"><i class="fa-solid fa-hashtag"></i></a></li>
+							<li><a href="#"><i class="fa-regular fa-bell"></i></a></li>
+							<li><a href="#"><i class="fa-regular fa-envelope"></i></a></li>
+							<li><a href="#"><i class="fa-regular fa-user"></i></a></li>
+						</ul>
+					</nav>
+				</div>
+
+				<div id="user-profile"></div>
+		</section>
+		
+		
+	<section id="center">
+		<header>
+			<nav></nav>
+		<h1><a href="#">Twimba</a></h1>
+	</header>
+		<div class="tweet-input-area">
+			<img src="images/scrimbalogo.png" class="profile-pic">
+			<textarea placeholder="What's happening?" id="tweet-input"></textarea>
+		</div>
+		<button id="tweet-btn">Tweet</button>
+		<div class="feed" id="feed">
+			<!-- Tweets here!! -->
+		</div>
+	</section>
+		
+		
+		<section id="right-side">
+			<input type="search" name="search" value="  search" id="search"> 
+							<div id="trends">
+								<h3>Trends For You</h3>
+								<div id="trending">
+									<a href="#">
+									<p>Trending</p>
+									<h4>Scrimba</h4>
+									<p>140k retweets</p>
+									</a>
+									<i></i>
+								</div>
+								<div id="trending">
+									<a href="#">
+									<p>Trending</p>
+									<h4>Scrimba</h4>
+									<p>140k retweets</p>
+									</a>
+									<i></i>
+								</div>
+								<div id="trending">
+									<a href="#">
+									<p>Trending</p>
+									<h4>Scrimba</h4>
+									<p>140k retweets</p>
+									</a>
+									<i></i>
+								</div>
+							</div>
+					
+		</section>
+		
+		
+		<div id="sign-up">
+			<input type="reset" id="cancel-btn" name="cancel btn" value="X" disabled>
+			<div id="form">
+			<form id="sign-up-form">
+				
+				<input type="text" id="fullname" name="u-fullname" placeholder="Enter your fullname"  required>
+				<input type="email" id="email" name="u-email" placeholder="Enter your email" required>
+				<input type="password" id="password" name="u-password" placeholder="******" required>
+				<button type="submit" id="sign-up-btn">Sign-up</button>
+				
+			</form>
+		</div>
+		</div>
+	</main>
+	<script src="index.js" type="module"></script>
+</body>
+
+</html>
