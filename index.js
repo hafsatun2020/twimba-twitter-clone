@@ -7,18 +7,21 @@ const signUpBox = document.getElementById('sign-up')
 const cancelbtn = document.getElementById('cancel-btn')
 const signBtn = document.getElementById('sign-up-btn')
 const form = document.getElementById('sign-up-form')
-//console.log(tweetReplies)
+
+const user = {
+    handle:`@Scrimba`
+
+}
 
 
 if (tweetsFromLS) {
-
     newTweetData = tweetsFromLS
-    //render()
-    //console.log(lsitem)
  }
 
  setTimeout(function(){
     signUpBox.style.display = 'block'
+    cancelbtn.disabled = false
+
  }, 3000)
 
  signBtn.addEventListener('click', function(){
@@ -27,13 +30,9 @@ if (tweetsFromLS) {
     console.log(name)
     document.getElementById('form').innerHTML =`<p id="message">Thank you for Signing Up <span> ${name}!</span></p>`
     cancelbtn.disabled = false
- })
 
-cancelbtn.addEventListener('click', function(){
-    signUpBox.style.display = 'none'
-})
 
-document.addEventListener('click', function(e){
+    document.addEventListener('click', function(e){
     
     
         if(e.target.dataset.like) {
@@ -54,6 +53,13 @@ document.addEventListener('click', function(e){
             render()
         }
 })
+ })
+
+cancelbtn.addEventListener('click', function(){
+    signUpBox.style.display = 'none'
+})
+
+
 
 
 function handleClickDeleteReply(replyId) {
@@ -203,68 +209,124 @@ function getFeedHtml(){
                     //console.log(tweet.uuid)
                     
                      tweet.replies.forEach(function(reply){
-                     
-                         repliesHtml +=`  
-                    <div class="tweet-reply" id="${reply.uuid}">
-                        <div class="tweet-inner">
-                            <img src="${reply.profilePic}" class="profile-pic">
-                            <div>
-                                <p class="handle">${reply.handle}</p>
-                                <p class="tweet-text">${reply.tweetText}</p>
-                                <i class="fa-solid fa-trash" data-deletereply="${reply.uuid}"></i>
+                     if(reply.handle === user.handle){
+                        repliesHtml +=`  
+                        <div class="tweet-reply" id="${reply.uuid}">
+                            <div class="tweet-inner">
+                                <img src="${reply.profilePic}" class="profile-pic">
+                                <div>
+                                    <p class="handle">${reply.handle}</p>
+                                    <p class="tweet-text">${reply.tweetText}</p>
+                                    <i class="fa-solid fa-trash" data-deletereply="${reply.uuid}"></i>
+                                </div>
                             </div>
-                        </div>
-                        
-                    </div>` 
+                            
+                        </div>` 
+                     }
+
+                     else{
+                        repliesHtml +=`  
+                        <div class="tweet-reply" id="${reply.uuid}">
+                            <div class="tweet-inner">
+                                <img src="${reply.profilePic}" class="profile-pic">
+                                <div>
+                                    <p class="handle">${reply.handle}</p>
+                                    <p class="tweet-text">${reply.tweetText}</p>
+                                   
+                                </div>
+                            </div>
+                            
+                        </div>` 
+
+                     }
+                       
                      })
                   
                 }
-        
-        feedHtml += `
-<div class="tweet" id="tweet">
-    <div class="tweet-inner" id="tweet-inner">
-        <img src="${tweet.profilePic}" class="profile-pic">
-        <div>
-            <p class="handle">${tweet.handle}</p>
-            <p class="tweet-text">${tweet.tweetText}</p>
-            <div class="tweet-details">
-                
-                
-                <span class="tweet-detail">
-                <i class="fa-regular fa-comment-dots" data-reply="${tweet.uuid}"></i>
-                  ${tweet.replies.length}
-                </span>
-                
-                
-                
-                <span class="tweet-detail">
-                <i class="fa-solid fa-retweet ${retweetIconClass}" data-retweet="${tweet.uuid}"></i>
-                    ${tweet.retweets}
-                </span>
-                <span class="tweet-detail">
-                <i class="fa-solid fa-heart ${likeIconClass}" data-like="${tweet.uuid}"></i>
-                    ${tweet.likes} 
-                </span>
-                
-                <span class="tweet-detail">
-                
-                
-                <i class="fa-solid fa-trash" data-deletebtn="${tweet.uuid}"></i>
-                </span>
-            </div>   
-        </div>            
-    </div>
-    <div class="hidden" id="replies-${tweet.uuid}">
-       ${repliesHtml}
-       <textarea id="reply-input-${tweet.uuid}"></textarea> 
-       <button type="submit" id="tweet-btn-reply" data-replybtn="${tweet.uuid}">Tweet</button>
-    </div>   
-</div>
-`
-        //document.getElementById('feed').innerHTML = feedHtml
-        
-        
-        
+        if(tweet.handle == user.handle){
+            feedHtml += `
+            <div class="tweet" id="tweet">
+                <div class="tweet-inner" id="tweet-inner">
+                    <img src="${tweet.profilePic}" class="profile-pic">
+                    <div>
+                        <p class="handle">${tweet.handle}</p>
+                        <p class="tweet-text">${tweet.tweetText}</p>
+                        <div class="tweet-details">
+                            
+                            
+                            <span class="tweet-detail">
+                            <i class="fa-regular fa-comment-dots" data-reply="${tweet.uuid}"></i>
+                              ${tweet.replies.length}
+                            </span>
+                            
+                            
+                            
+                            <span class="tweet-detail">
+                            <i class="fa-solid fa-retweet ${retweetIconClass}" data-retweet="${tweet.uuid}"></i>
+                                ${tweet.retweets}
+                            </span>
+                            <span class="tweet-detail">
+                            <i class="fa-solid fa-heart ${likeIconClass}" data-like="${tweet.uuid}"></i>
+                                ${tweet.likes} 
+                            </span>
+                            
+                            <span class="tweet-detail">
+                            
+                            
+                            <i class="fa-solid fa-trash" data-deletebtn="${tweet.uuid}"></i>
+                            </span>
+                        </div>   
+                    </div>            
+                </div>
+                <div class="hidden" id="replies-${tweet.uuid}">
+                   ${repliesHtml}
+                   <textarea id="reply-input-${tweet.uuid}"></textarea> 
+                   <button type="submit" id="tweet-btn-reply" data-replybtn="${tweet.uuid}">Tweet</button>
+                </div>   
+            </div>
+            `
+        } else{
+            feedHtml += `
+            <div class="tweet" id="tweet">
+                <div class="tweet-inner" id="tweet-inner">
+                    <img src="${tweet.profilePic}" class="profile-pic">
+                    <div>
+                        <p class="handle">${tweet.handle}</p>
+                        <p class="tweet-text">${tweet.tweetText}</p>
+                        <div class="tweet-details">
+                            
+                            
+                            <span class="tweet-detail">
+                            <i class="fa-regular fa-comment-dots" data-reply="${tweet.uuid}"></i>
+                              ${tweet.replies.length}
+                            </span>
+                            
+                            
+                            
+                            <span class="tweet-detail">
+                            <i class="fa-solid fa-retweet ${retweetIconClass}" data-retweet="${tweet.uuid}"></i>
+                                ${tweet.retweets}
+                            </span>
+                            <span class="tweet-detail">
+                            <i class="fa-solid fa-heart ${likeIconClass}" data-like="${tweet.uuid}"></i>
+                                ${tweet.likes} 
+                            </span>
+                            
+                        
+                        </div>   
+                    </div>            
+                </div>
+                <div class="hidden" id="replies-${tweet.uuid}">
+                   ${repliesHtml}
+                   <textarea class="reply-input" id="reply-input-${tweet.uuid}"></textarea> 
+                   <button type="submit" id="tweet-btn-reply" data-replybtn="${tweet.uuid}">Tweet</button>
+                </div>   
+            </div>
+            `
+                    
+                    
+        }
+       
     })
     return feedHtml
 }
